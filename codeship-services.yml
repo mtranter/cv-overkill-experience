@@ -5,5 +5,7 @@ gulp:
 terraform:
   build:
     dockerfile: Dockerfile.deploy
+  volumes:
+    - /app
   encrypted_env_file: env.encrypted
   cached: true
