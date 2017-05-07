@@ -1,4 +1,4 @@
-define('text!experience/index.html',['module'], function(module) { module.exports = "<template>\n  Hello From Remote plugins\n</template>\n"; })
+define('text!experience/index.html',['module'], function(module) { module.exports = "<template>\n  Hello From Experience\n</template>\n"; })
 define("experience/index", ["exports"], function (exports) {
   "use strict";
 

@@ -6,6 +6,6 @@ terraform:
   build:
     dockerfile: Dockerfile.deploy
   volumes:
-    - ./tmp/app:/app
+    - ./tmp/build:/build
   encrypted_env_file: env.encrypted
   cached: true

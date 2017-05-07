@@ -1,5 +1,5 @@
 var path = require('path');
-let moduleName = require('./module-name.json').name;
+var moduleName = require('./module-name.json').name;
 
 exports.base = function() {
   return {

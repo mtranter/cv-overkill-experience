@@ -14,6 +14,21 @@ let vinylPaths = require('vinyl-paths');
 var del = require('del');
 var Vinyl = require('vinyl');
 
+var plumber = require('gulp-plumber');
+var gutil = require('gulp-util');
+
+var gulp_src = gulp.src;
+gulp.src = function() {
+  return gulp_src.apply(gulp, arguments)
+    .pipe(plumber(function(error) {
+      // Output an error message
+      gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
+      // emit the end event, to properly end the task
+      this.emit('end');
+    })
+  );
+};
+
 
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
@@ -56,11 +71,13 @@ gulp.task('require-cfg', function(){
 
   return gulp.src(paths.source)
     .pipe(through.obj( function( file, enc, cb ) {
+
       let fp = path.relative(file.cwd + "/src", file.path).replace(/\.\w+$/gi, '');
       let moduleId = `${moduleName}/${fp}`
       cfg.bundles[bundleName].push(moduleId);
       return cb();
     }, function(cb){
+
         let jsFile = new Vinyl({
           path: 'bundle-cfg.js',
           contents: new Buffer('requirejs.config(' + JSON.stringify(cfg) + ');')
@@ -79,7 +96,9 @@ gulp.task('tidy', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-html', 'build-amd','require-cfg'],
+    'build-amd',
+    'build-html',
+    'require-cfg',
     'bundle',
     'tidy',
     callback
