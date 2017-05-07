@@ -1,4 +1,4 @@
-.terraform
+deploy/.terraform
 node_modules
 *.tfstate
 *.tfstate.backup
