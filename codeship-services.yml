@@ -1,0 +1,8 @@
+gulp:
+  build:
+    dockerfile: Dockerfile.build.ui
+  cached: true
+terraform:
+  build:
+    dockerfile: Dockerfile.deploy
+  cached: true

@@ -1,0 +1,5 @@
+FROM hashicorp/terraform:light
+RUN mkdir -p /app/deploy /app/src/ui/dist
+WORKDIR /app/deploy
+ADD ./deploy /app/deploy/
+ADD ./src/ui/dist /app/src/ui/dist

@@ -1,0 +1,7 @@
+FROM node:6-alpine
+RUN npm install -g gulp
+RUN mkdir -p /app/ui
+WORKDIR /app/ui
+ADD ./src/ui/package.json /app/ui
+RUN npm install
+ADD ./src/ui /app/ui
