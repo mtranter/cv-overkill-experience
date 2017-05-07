@@ -2,3 +2,5 @@
 node_modules
 *.tfstate
 *.tfstate.backup
+codeship.aes
+env
