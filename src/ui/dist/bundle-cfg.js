@@ -1,1 +1,1 @@
-requirejs.config({"paths":{"experience-bundle":"../experience/bundle"},"bundles":{"experience-bundle":["experience/index","experience/plugin"]}});
+requirejs.config({"paths":{"experience-bundle":"../experience/bundle"},"bundles":{"experience-bundle":["experience/experience","experience/index","experience/plugin"]}});
