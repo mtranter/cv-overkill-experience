@@ -1,7 +1,0 @@
-- name: build
-  type: serial
-  steps:
-    - service: gulp
-      command: gulp build
-    - service: terraform
-      command: ./deploy.sh
