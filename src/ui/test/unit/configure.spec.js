@@ -1,9 +1,16 @@
-var config = require('../../src/index');
+import {configure} from '../../src/plugin';
 
 class ConfigStub {
-  globalResources(...resources) {
-    this.resources = resources;
+  services = {}
+  get container(){
+    let that = this;
+    return {
+      registerInstance: function(key,val) {
+        that.services[key] = val
+      }
+    }
   }
+
 }
 
 describe('the Aurelia configuration', () => {
@@ -14,8 +21,8 @@ describe('the Aurelia configuration', () => {
     configure(mockedConfiguration);
   });
 
-  it('should register a global resource', () => {
-    expect(mockedConfiguration.resources).toContain('./hello-world');
+  it('should register plugin routes', () => {
+    expect(mockedConfiguration.services['plugin.route']).toBeDefined();
   });
 
 });

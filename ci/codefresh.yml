@@ -1,11 +1,13 @@
 version: '1.0'
 steps:
   aurelia_build:
-    image: mtranter/gulp-node:6-alpine
+    image: mtranter/ui-module-build:latest
     working_directory: ./src/ui
     description: Build Aurelia App
     commands:
       - npm install
+      - jspm install
+      - gulp test
       - gulp build
   deploy:
     image: hashicorp/terraform

@@ -49,6 +49,12 @@
     "isparta": "^4.0.0",
     "istanbul": "^1.0.0-alpha.2",
     "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jspm": "2.2.2",
     "object.assign": "^4.0.4",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
@@ -56,8 +62,7 @@
     "vinyl-paths": "^2.1.0",
     "yargs": "^7.0.2"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "jspm": {
     "registry": "npm",
     "main": "index",
@@ -65,8 +70,12 @@
     "directories": {
       "dist": "dist/amd"
     },
+    "dependencies": {},
     "devDependencies": {
-      "aurelia-polyfills": "^1.0.0"
+      "aurelia-polyfills": "^1.0.0",
+      "babel": "babel-core@^5.8.24",
+      "babel-runtime": "^5.8.24",
+      "core-js": "^1.1.4"
     }
   }
 }
