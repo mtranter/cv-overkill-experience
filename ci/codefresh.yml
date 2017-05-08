@@ -6,6 +6,7 @@ steps:
     description: Build Aurelia App
     commands:
       - npm install
+      - echo $(pwd)
       - au build
   deploy:
     image: hashicorp/terraform
