@@ -1,7 +1,7 @@
 version: '1.0'
 steps:
   aurelia_build:
-    image: node:6-alpine
+    image: mtranter/gulp-node:6-alpine
     working_directory: ./src/ui
     description: Build Aurelia App
     commands:
