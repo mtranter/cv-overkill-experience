@@ -1,0 +1,18 @@
+version: '1.0'
+steps:
+  aurelia_build:
+    image: mtranter/aurelia:6-alpine-2
+    working_directory: ${{main_clone}}/src/ui
+    description: Build Aurelia App
+    commands:
+      - npm install
+      - au build
+  deploy:
+    image: hashicorp/terraform
+    working_directory: ${{main_clone}}/deploy
+    description: Deploy using Terraform
+    environment:
+      - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
+      - AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}
+    commands:
+      - terraform apply
