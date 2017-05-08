@@ -1,13 +1,12 @@
 version: '1.0'
 steps:
   aurelia_build:
-    image: mtranter/aurelia:6-alpine-2
+    image: node:6-alpine
     working_directory: ./src/ui
     description: Build Aurelia App
     commands:
       - npm install
-      - echo $(pwd)
-      - au build
+      - gulp build
   deploy:
     image: hashicorp/terraform
     working_directory: ${{main_clone}}/deploy
