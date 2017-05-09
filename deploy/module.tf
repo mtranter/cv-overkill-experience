@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket  = "cv-overkill-tf-state"
+    key     = "aws-infrastructure-experience"
+    region  = "eu-west-1"
+  }
+}
+
 variable "region" {
   default = "eu-west-1"
 }
