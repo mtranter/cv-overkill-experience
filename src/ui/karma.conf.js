@@ -13,10 +13,11 @@ module.exports = function(config) {
 
     jspm: {
       // Edit this to your needs
-      loadFiles: ['test/setup.js', 'test/unit/**/*.js'],
-      serveFiles: ['src/**/*.js'],
+      loadFiles: ['test/unit/setup.js', 'test/unit/**/*.js'],
+      serveFiles: ['src/**/*.js','src/**/*.html'],
       paths: {
-        '*': '*',
+        '*': 'src/*',
+        'test/*': 'test/*',
         'github:*': 'jspm_packages/github/*',
         'npm:*': 'jspm_packages/npm/*'
       }
@@ -38,11 +39,12 @@ module.exports = function(config) {
     'babelPreprocessor': {
       options: {
         sourceMap: 'inline',
-        presets: [['es2015', { loose: true }], 'stage-1'],
+        presets: [ ['es2015', { loose: true }], 'stage-1'],
         plugins: [
           'syntax-flow',
           'transform-decorators-legacy',
-          'transform-flow-strip-types'
+          'transform-flow-strip-types',
+          [ 'istanbul', { 'ignore': 'test/' } ]
         ]
       }
     },

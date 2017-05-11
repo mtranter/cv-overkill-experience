@@ -8,7 +8,7 @@ steps:
       - npm install
       - jspm install
       - gulp test
-      - gulp build --env prod
+      - gulp bundle
   deploy:
     image: hashicorp/terraform
     working_directory: ${{main_clone}}/deploy
