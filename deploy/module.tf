@@ -12,6 +12,10 @@ variable "region" {
   default = "eu-west-1"
 }
 
+provider "aws" {
+  region = "eu-west-1"
+}
+
 module "experience" {
   source = "github.com/mtranter/cv-overkill-terraform?ref=v1.0//modules/tf-cv-overkill-aurelia-module"
   website_files = ["app-bundle.js"]
