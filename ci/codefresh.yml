@@ -25,6 +25,10 @@ steps:
     dockerfile: Dockerfile
     image_name: mtranter/cv-experience
     tag: '${{CF_BUILD_ID}}'
+  push_backend:
+    type: push
+    title: Push Backend
+    candidate: ${{backend_docker}}
   deploy:
     image: hashicorp/terraform
     working_directory: ${{main_clone}}/deploy
