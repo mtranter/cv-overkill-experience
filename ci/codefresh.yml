@@ -29,6 +29,7 @@ steps:
     type: push
     title: Push Backend
     candidate: ${{backend_docker}}
+    tag: '${{CF_BUILD_ID}}'
   deploy:
     image: hashicorp/terraform
     working_directory: ${{main_clone}}/deploy
