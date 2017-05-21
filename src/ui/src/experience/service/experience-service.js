@@ -7,6 +7,6 @@ export class ExperienceService {
     this.http = http;
   }
   getExperience(){
-    return this.http.fetch('experience/').then(d => d.json());
+    return this.http.fetch('http://api.marktranter.com/experience/').then(d => d.json());
   }
 }

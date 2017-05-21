@@ -1,0 +1,12 @@
+[
+  {
+    "name": "experience-service",
+    "image": "mtranter/cv-experience:${image_tag}",
+    "cpu": 256,
+    "memory": 256,
+    "portMappings": [{"containerPort": 80}],
+    "environment":[
+      {"name": "CONNECTIONSTRINGS__MONGO", "value": "mongodb://mongo.marktranter.com/experience"}
+    ]
+  }
+]

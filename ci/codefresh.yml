@@ -9,6 +9,21 @@ steps:
       - jspm install
       - gulp test
       - gulp bundle
+  backend_build:
+    image: microsoft/dotnet:1.0.5-sdk-jessie
+    working_directory: ./src/Experience
+    description: Build backend
+    commands:
+      - dotnet build
+      - dotnet test ./Experience.Service.Tests/Experience.Service.Tests.csproj
+      - dotnet publish ./Experience.Service/Experience.Service.csproj
+  backend_docker:
+    type: build
+    title: Build backend docker image
+    working_directory: ${{backend_build}}/Experience.Service
+    dockerfile: Dockerfile
+    image_name: mtranter/cv-experience
+    tag: '${{CF_BUILD_ID}}'
   deploy:
     image: hashicorp/terraform
     working_directory: ${{main_clone}}/deploy
@@ -19,4 +34,4 @@ steps:
     commands:
       - terraform init -force-copy
       - terraform get
-      - terraform apply
+      - terraform apply -var 'build_id=${{CF_BUILD_ID}}'
