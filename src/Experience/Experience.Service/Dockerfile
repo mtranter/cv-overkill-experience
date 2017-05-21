@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:1.0.5-runtime-jessie
+FROM microsoft/aspnetcore:1.1.2
 ENV ASPNETCORE_URLS=http://*:80
 ENV ASPNETCORE_ENVIRONMENT=production
 RUN mkdir /app
