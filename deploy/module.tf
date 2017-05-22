@@ -36,7 +36,7 @@ module "experience_backend" {
   source                        = "github.com/mtranter/cv-overkill-terraform?ref=v1.5//modules/ecs-service"
   alb_listener_rule_priority    = 85
   alb_condition_field           = "path-pattern"
-  alb_condition_values          = "/experience/*"
+  alb_condition_values          = "/experience*"
   service_name                  = "experience-service"
   alb_container_name            = "experience-service"
   service_port                  = "80"
