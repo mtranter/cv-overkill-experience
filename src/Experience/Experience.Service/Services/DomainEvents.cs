@@ -6,6 +6,9 @@ namespace Experience.Service.Services
 {
     public static class DomainEvents
     {
+        #if TEST_RUN
+        [ThreadStatic]
+        #endif
         private static ConcurrentDictionary<Type,List<dynamic>> Handlers = new ConcurrentDictionary<Type, List<dynamic>>();
         private static List<IEventListener> GlobalHandlers = new List<IEventListener>();
 
