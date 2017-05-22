@@ -22,6 +22,7 @@ module "experience" {
   relative_source_path = "/../src/ui/dist/"
   region = "${var.region}"
   module_name = "experience"
+  health_check_path = "/experience"
 }
 
 data "template_file" "task_definition" {
