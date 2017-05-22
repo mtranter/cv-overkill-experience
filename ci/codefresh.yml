@@ -10,7 +10,7 @@ steps:
       - gulp test
       - gulp bundle
   backend_build:
-    image: microsoft/dotnet:1.0.5-sdk-jessie
+    image: microsoft/dotnet:1.1.2-sdk-jessie
     working_directory: ./src/Experience
     description: Build backend
     commands:
