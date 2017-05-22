@@ -11,7 +11,7 @@ steps:
       - gulp bundle
   backend_build:
     image: microsoft/dotnet:1.1.2-sdk-jessie
-    working_directory: ./src/Experience
+    working_directory: ${{main_clone}}/src/Experience
     description: Build backend
     commands:
       - dotnet restore
@@ -21,7 +21,7 @@ steps:
   backend_docker:
     type: build
     title: Build backend docker image
-    working_directory: ${{backend_build}}/Experience.Service
+    working_directory: ${{backend_build}}
     dockerfile: Dockerfile
     image_name: mtranter/cv-experience
     tag: '${{CF_BUILD_ID}}'
