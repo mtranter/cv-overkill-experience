@@ -1,3 +1,4 @@
+import {inject} from 'aurelia-framework';
 import ExperienceService from './../experience-service'
 
 @inject(ExperienceService)
