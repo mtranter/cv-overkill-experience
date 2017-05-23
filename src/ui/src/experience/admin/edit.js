@@ -10,10 +10,10 @@ export class Edit {
     this.newExperience = {};
   }
   addExperience(experience) {
-    this.experienceSvc.addExperience(experience).then(refresh)
+    this.experienceSvc.addExperience(experience).then(refresh);
   }
   refresh() {
-    this.experienceSvc.getExperiences().then(e => this.experiences = e)
+    return this.experienceSvc.getExperiences().then(e => this.experiences = e);
   }
   attached() {
     return this.refresh();
