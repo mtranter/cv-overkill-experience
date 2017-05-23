@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import ExperienceService from './../experience-service'
+import {ExperienceService} from './../experience-service'
 
 @inject(ExperienceService)
 export class Edit {
