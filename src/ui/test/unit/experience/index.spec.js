@@ -50,6 +50,7 @@ describe('IndexComponent', () => {
       expect(nameElement.innerHTML).toBe(testName);
     })
     .then(done)
+    .catch(e => { console.log(e.message); })
   });
 
   afterEach(() => {
