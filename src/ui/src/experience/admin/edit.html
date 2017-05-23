@@ -7,7 +7,7 @@
   </div>
   <div class="row experience" if.bind="!!newExperience">
     <div class="col-md-12">
-      <form submit.delegate="save(experience)">
+      <form submit.delegate="addExperience(experience)">
       <div class="form-group">
         <label for="company">Company</label>
         <input id="company" value.bind="experience.name"  type="text" class="form-control" placeholder="Acme Ltd"/>
