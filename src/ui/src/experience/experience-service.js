@@ -9,13 +9,9 @@ export class ExperienceService {
   getExperiences(){
     return this.http.fetch('http://api.marktranter.com/experience/').then(d => d.json());
   }
-  addExperiecne(x) {
+  addExperience(experience) {
     return this.http.fetch('http://api.marktranter.com/experience/', {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
       body: JSON.stringify(experience)
     });
   }
