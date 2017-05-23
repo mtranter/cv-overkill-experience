@@ -22,7 +22,6 @@ module "experience" {
   relative_source_path = "/../src/ui/dist/"
   region = "${var.region}"
   module_name = "experience"
-  health_check_path = "/experience"
 }
 
 data "template_file" "task_definition" {
@@ -43,5 +42,6 @@ module "experience_backend" {
   service_port                  = "80"
   task_definition               = "${data.template_file.task_definition.rendered}"
   desired_count                 = 1
+  health_check_path = "/experience"
 
 }
