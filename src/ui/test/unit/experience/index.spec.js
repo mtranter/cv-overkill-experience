@@ -47,6 +47,7 @@ describe('IndexComponent', () => {
     .then(() => component.attached())
     .then(() => {
       const nameElement = document.querySelector('li');
+      console.log(nameElement.innerHTML)
       expect(nameElement.innerHTML).toBe(testName);
     })
     .then(done)
