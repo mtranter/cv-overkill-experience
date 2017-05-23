@@ -80,6 +80,7 @@ namespace Experience.Service
             app.UseCors(builder =>
                 builder.WithOrigins(Configuration["CorsOrigin"])
                 .AllowCredentials()
+                .AllowAnyMethod()
                 .AllowAnyHeader()
             );
 
