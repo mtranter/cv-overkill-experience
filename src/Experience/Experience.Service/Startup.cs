@@ -78,8 +78,9 @@ namespace Experience.Service
             app.UseJwtBearerAuthentication(options);
 
             app.UseCors(builder =>
-                builder.WithOrigins(Configuration["CorsOrigin"])
+                builder//.WithOrigins(Configuration["CorsOrigin"])
                 .AllowCredentials()
+                .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
             );
