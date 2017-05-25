@@ -15,7 +15,7 @@ export class ExperienceService {
       body: JSON.stringify(experience)
     });
   }
-  saveExperience(experience) {
+  updateExperience(experience) {
     return this.http.fetch(`http://api.marktranter.com/experience/${experience.id}`, {
       method: 'PUT',
       body: JSON.stringify(experience)
