@@ -13,16 +13,16 @@ export class Edit {
     if(experience.id){
       this.experienceSvc.updateExperience(experience).then(this.refresh);
     } else {
-      this.experienceSvc.addExperience(experience).then(() => { this.clearEditing(); this.refresh(); };
+      this.experienceSvc.addExperience(experience).then(() => { this.clearEditing(); this.refresh(); });
     }
   }
   refresh() {
     return this.experienceSvc.getExperiences().then(e => {
-      this.experiences = e
+      this.experiences = e;
     });
   }
   clearEditing(){
-
+    this.editingExperience = undefined;
   }
   attached() {
     return this.refresh();
