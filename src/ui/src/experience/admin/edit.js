@@ -11,7 +11,7 @@ export class Edit {
   }
   saveExperience(experience) {
     if(experience.id){
-      this.experienceSvc.updateExperience(experience).then(this.refresh);
+      this.experienceSvc.updateExperience(experience).then(() => this.refresh());
     } else {
       this.experienceSvc.addExperience(experience).then(() => { this.clearEditing(); this.refresh(); });
     }
