@@ -6,7 +6,7 @@ export class Edit {
   constructor(experience){
     this.experienceSvc = experience;
   }
-  startAddExperience(experience) {
+  editExperience(experience) {
     this.editingExperience = experience;
   }
   saveExperience(experience) {
