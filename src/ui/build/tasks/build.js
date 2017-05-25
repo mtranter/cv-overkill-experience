@@ -10,6 +10,7 @@ var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var htmlmin = require('gulp-htmlmin');
+var less = require('gulp-less');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -35,8 +36,9 @@ gulp.task('build-html', function() {
 
 // copies changed css files to the output directory
 gulp.task('build-css', function() {
-  return gulp.src(paths.css)
-    .pipe(changed(paths.output, {extension: '.css'}))
+  return gulp.src(paths.less)
+    .pipe(changed(paths.output, {extension: '.less'}))
+    .pipe(less({}))
     .pipe(gulp.dest(paths.output))
     .pipe(browserSync.stream());
 });

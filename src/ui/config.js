@@ -140,10 +140,13 @@ System.config({
   },
   bundles: {
     "app-bundle.js": [
+      "experience/admin/edit.html!github:systemjs/plugin-text@0.0.8.js",
+      "experience/admin/edit.js",
+      "experience/experience-service.js",
+      "experience/experience.css!github:systemjs/plugin-text@0.0.8.js",
       "experience/experience.html!github:systemjs/plugin-text@0.0.8.js",
       "experience/experience.js",
-      "experience/plugin.js",
-      "experience/service/experience-service.js"
+      "experience/plugin.js"
     ]
   }
 });

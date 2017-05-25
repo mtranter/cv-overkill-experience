@@ -9,18 +9,17 @@
 
         <!-- INTRO INFORMATION-->
         <div class="col-lg-6 col-lg-offset-3">
-          This is my experience
           <article class="experience-item" repeat.for="item of experiences">
-            <time datetime="${item.startDate}">${item.startDate | shortDate}</time> - <time datetime="${item.endDate}">${item.endDate | shortDate}</time>
+            <h3>${item.companyName}</h3>
             <h1>${item.role}</h1>
-            <p>${item.companyName}</p>
+            <span>
+              <time datetime="${item.startDate}">${item.startDate | shortDate}</time>
+              -
+              <time datetime="${item.endDate}">${item.endDate | shortDate}</time>
+            </span>
             <div>${item.blurb}</div>
-          </article>
-          <ul>
-            <li class="experience-item" >
 
-            </li>
-          </ul>
+          </article>
         </div>
       </div>
     </div><!-- /container -->
