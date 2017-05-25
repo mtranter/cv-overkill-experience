@@ -14,7 +14,7 @@ module.exports = function(config) {
     jspm: {
       // Edit this to your needs
       loadFiles: ['test/unit/setup.js', 'test/unit/**/*.js'],
-      serveFiles: ['src/**/*.js','src/**/*.html'],
+      serveFiles: ['src/**/*.js','src/**/*.html','src/**/*.less'],
       paths: {
         '*': 'src/*',
         'test/*': 'test/*',
@@ -34,7 +34,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'test/**/*.js': ['babel'],
-      'src/**/*.js': ['babel']
+      'src/**/*.js': ['babel'],
+      'src/**/*.less': ['less']
     },
     'babelPreprocessor': {
       options: {
