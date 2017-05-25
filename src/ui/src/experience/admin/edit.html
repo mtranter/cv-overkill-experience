@@ -33,7 +33,7 @@
       </form>
     </div>
   </div>
-  <div class="row experience" repeat.for="experience of experiences">
+  <div class="row experience" repeat.for="experience of experiences" if.bind="experience !== editingExperience">
     <div class="col-md-3">
       <div>${experience.startDate | shortDate} - ${experience.endDate | shortDate}</div>
       <div class="role">${experience.role}</div>
