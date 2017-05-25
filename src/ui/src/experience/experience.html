@@ -11,7 +11,7 @@
         <div class="col-lg-6 col-lg-offset-3">
           This is my experience
           <article class="experience-item" repeat.for="item of experiences">
-            <time datetime="${item.startDate}">${item.stateDate | shortDate}</time> - <time datetime="${item.endDate}">${item.endDate | shortDate}</time>
+            <time datetime="${item.startDate}">${item.startDate | shortDate}</time> - <time datetime="${item.endDate}">${item.endDate | shortDate}</time>
             <h1>${item.role}</h1>
             <p>${item.companyName}</p>
             <div>${item.blurb}</div>
