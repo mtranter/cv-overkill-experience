@@ -17,6 +17,10 @@ class HttpStub {
   }
 }
 
+class ShortDateValueConverter {
+  toValue(a){ return a;}
+}
+
 describe('IndexComponent', () => {
   let component;
   let viewModel;
@@ -33,6 +37,7 @@ describe('IndexComponent', () => {
         aurelia.use.standardConfiguration();
 
         aurelia.container.registerInstance(HttpClient, svc);
+        aurelia.resources.registerValueConverter('shortDate',ShortDateValueConverter);
       });
   });
 
@@ -41,12 +46,12 @@ describe('IndexComponent', () => {
     component.manuallyHandleLifecycle().create(bootstrap)
     .then(() => component.bind())
     .then(() => {
-      const nameElement = document.querySelector('li');
+      const nameElement = document.querySelector('article p');
       expect(nameElement).toBe(null);
     })
     .then(() => component.attached())
     .then(() => {
-      const nameElement = document.querySelector('li');
+      const nameElement = document.querySelector('article p');
       expect(nameElement.innerHTML).toBe(testName);
     })
     .then(done)
