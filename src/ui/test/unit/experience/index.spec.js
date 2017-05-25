@@ -10,7 +10,7 @@ class HttpStub {
     return Promise.resolve({
       json: function(){
         return Promise.resolve([{
-          company: that.companyName
+          companyName: that.companyName
         }]);
       }
     });
@@ -46,7 +46,6 @@ describe('IndexComponent', () => {
     })
     .then(() => component.attached())
     .then(() => {
-      const nameElement = document.querySelector('li');
       console.log(nameElement.innerHTML)
       expect(nameElement.innerHTML).toBe(testName);
     })

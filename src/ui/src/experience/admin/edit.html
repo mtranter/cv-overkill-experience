@@ -2,12 +2,12 @@
   <div class="row">
     <h1 class="page-header">Experience
 
-      <button class="btn btn-primary pull-right" if.bind="!newExperience" click.delegate="startAddExperience()"><i class="fa fa-plus"></i></button>
+      <button class="btn btn-primary pull-right" if.bind="!editingExperience" click.delegate="editExperience({})"><i class="fa fa-plus"></i></button>
     </h1>
   </div>
-  <div class="row experience" if.bind="!!newExperience">
+  <div class="row experience" if.bind="!!editingExperience">
     <div class="col-md-12">
-      <form submit.delegate="addExperience(experience)">
+      <form submit.delegate="saveExperience(experience)">
       <div class="form-group">
         <label for="company">Company</label>
         <input id="company" value.bind="experience.companyName"  type="text" class="form-control" placeholder="Acme Ltd"/>
@@ -34,22 +34,17 @@
   </div>
 
 <div class="row experience" repeat.for="experience of experiences">
-  <div class="col-md-12">
-    <form submit.delegate="save(experience)">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Company</label>
-      <input value.bind="experience.name"  type="text" class="form-control" placeholder="Acme Ltd"/>
+  <div class="col-md-3">
+    <div>${experience.startDate | shortDate} - ${experience.endDate | shortDate}</div>
+    <div class="role">${experience.role}</div>
+    <div>${experience.companyName}</div>
+  </div>
+  <div class="col-md-9">
+    ${experience.blurb}
+    <div class="edit-delete pull-right">
+      <button class="btn btn-primary" click.delegate="editExperience(experience)"><i class="fa fa-pencil"></i></button>
+      <button class="btn btn-secondary"><i class="fa fa-delete"></i></button>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Role</label>
-      <input value.bind="experience.role" class="form-control"  placeholder="Snr Engineer"/>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Blurb</label>
-      <textarea value.bind="experience.blurb" class="form-control"  placeholder="An insufferable artisanal code craftsman and part time poet..."></textarea>
-    </div>
-    <button type="submit" class="btn btn-default">Save</button>
-    </form>
   </div>
 </div>
 </template>
