@@ -46,12 +46,12 @@ describe('IndexComponent', () => {
     component.manuallyHandleLifecycle().create(bootstrap)
     .then(() => component.bind())
     .then(() => {
-      const nameElement = document.querySelector('article p');
+      const nameElement = document.querySelector('article h3');
       expect(nameElement).toBe(null);
     })
     .then(() => component.attached())
     .then(() => {
-      const nameElement = document.querySelector('article p');
+      const nameElement = document.querySelector('article h3');
       expect(nameElement.innerHTML).toBe(testName);
     })
     .then(done)
