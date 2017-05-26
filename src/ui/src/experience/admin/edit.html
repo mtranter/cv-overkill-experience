@@ -34,12 +34,12 @@
     </div>
   </div>
   <div class="row experience" repeat.for="experience of experiences" if.bind="experience !== editingExperience">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div>${experience.startDate | shortDate} - ${experience.endDate | shortDate}</div>
       <div class="role">${experience.role}</div>
       <div>${experience.companyName}</div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
       <span innerHtml.bind="experience.blurb"></span>
       <div class="edit-delete pull-right">
         <button class="btn btn-primary" click.delegate="$parent.editExperience(experience)"><i class="fa fa-pencil"></i></button>
