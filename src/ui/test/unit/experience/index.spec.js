@@ -41,7 +41,7 @@ describe('IndexComponent', () => {
         aurelia.use.standardConfiguration();
 
         aurelia.container.registerInstance(HttpClient, svc);
-        aurelia.resources.registerValueConverter('date',ShortDateValueConverter);
+        aurelia.resources.registerValueConverter('date',DateValueConverter);
         aurelia.resources.registerValueConverter('sort',SortValueConverter);
       });
   });
