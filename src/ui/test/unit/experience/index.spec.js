@@ -21,6 +21,10 @@ class ShortDateValueConverter {
   toValue(a){ return a;}
 }
 
+class SortValueConverter {
+  toValue(a){ return a;}
+}
+
 describe('IndexComponent', () => {
   let component;
   let viewModel;
@@ -38,6 +42,7 @@ describe('IndexComponent', () => {
 
         aurelia.container.registerInstance(HttpClient, svc);
         aurelia.resources.registerValueConverter('shortDate',ShortDateValueConverter);
+        aurelia.resources.registerValueConverter('sort',SortValueConverter);
       });
   });
 
