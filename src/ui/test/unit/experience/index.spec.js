@@ -17,7 +17,7 @@ class HttpStub {
   }
 }
 
-class ShortDateValueConverter {
+class DateValueConverter {
   toValue(a){ return a;}
 }
 
@@ -41,7 +41,7 @@ describe('IndexComponent', () => {
         aurelia.use.standardConfiguration();
 
         aurelia.container.registerInstance(HttpClient, svc);
-        aurelia.resources.registerValueConverter('shortDate',ShortDateValueConverter);
+        aurelia.resources.registerValueConverter('date',ShortDateValueConverter);
         aurelia.resources.registerValueConverter('sort',SortValueConverter);
       });
   });
