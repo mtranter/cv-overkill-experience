@@ -35,7 +35,7 @@
   </div>
   <div class="row experience" repeat.for="experience of experiences" if.bind="experience !== editingExperience">
     <div class="col-md-4">
-      <div>${experience.startDate | shortDate} - ${experience.endDate | shortDate}</div>
+      <div>${experience.startDate | shortDate} - ${experience.endDate | date: 'MMMM YYYY'}</div>
       <div class="role">${experience.role}</div>
       <div>${experience.companyName}</div>
     </div>
