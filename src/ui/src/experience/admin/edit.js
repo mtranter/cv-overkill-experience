@@ -24,6 +24,9 @@ export class Edit {
   addTech(experience, tech){
     return this.experienceSvc.addTech(experience.id, tech).then(() => experience.techs.push(tech));
   }
+  removeTech(experience, tech){
+    return this.experienceSvc.removeTech(experience.id, tech).then(() => experience.techs = experience.techs.filter(t => t != tech));
+  }
   clearEditing(){
     this.editingExperience = undefined;
   }
