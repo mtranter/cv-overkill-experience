@@ -20,7 +20,7 @@
             </span>
             <div class="techs">
               <h5>Technologies</h5>
-              <span repeat.for="tech of techs">${tech}${!$last ? ', ' : ''}</span>
+              <span repeat.for="tech of techs">${item.tech}${!$last ? ', ' : ''}</span>
             </div>
             <div innerHtml.bind="item.blurb"></div>
           </article>
