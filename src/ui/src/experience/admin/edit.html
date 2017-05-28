@@ -46,8 +46,8 @@
     </div>
       <div innerHtml.bind="experience.blurb"></div>
       <div>
-        <span class="label label-success" repeat.for="tech in techs">${tech} </span>
-        <form submit.delegate="addTech(experience, newTech.value)"><input type="text" ref="newTech" /></form>
+        <span class="label label-success" repeat.for="tech in experience.techs">${tech} </span>
+        <form submit.delegate="$parent.addTech(experience, newTech.value)"><input type="text" ref="newTech" /></form>
       </div>
     </div>
   </div>
