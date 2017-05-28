@@ -18,6 +18,10 @@
               <time if.bind="!!item.endDate" datetime="${item.endDate}">${item.endDate | date: 'MMMM YYYY'}</time>
               <span if.bind="!item.endDate">Present</span>
             </span>
+            <div class="techs">
+              <h5>Technologies</h5>
+              <span repeat.for="tech of techs">${tech}${!$last ? ', ' : ''}</span>
+            </div>
             <div innerHtml.bind="item.blurb"></div>
           </article>
         </div>
