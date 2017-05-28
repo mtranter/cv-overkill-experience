@@ -40,11 +40,11 @@
       <div>${experience.companyName}</div>
     </div>
     <div class="col-md-8">
+    <div class="edit-delete pull-right">
+      <button class="btn btn-primary" click.delegate="$parent.editExperience(experience)"><i class="fa fa-pencil"></i></button>
+      <button class="btn btn-secondary"><i class="fa fa-remove"></i></button>
+    </div>
       <span innerHtml.bind="experience.blurb"></span>
-      <div class="edit-delete pull-right">
-        <button class="btn btn-primary" click.delegate="$parent.editExperience(experience)"><i class="fa fa-pencil"></i></button>
-        <button class="btn btn-secondary"><i class="fa fa-remove"></i></button>
-      </div>
     </div>
   </div>
 </template>
