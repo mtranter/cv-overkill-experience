@@ -21,6 +21,9 @@ export class Edit {
       this.experiences = e;
     });
   }
+  addTech(experience, tech){
+    return this.experienceSvc.addTech(experience.id, tech).then(() => experience.techs.push(tech));
+  }
   clearEditing(){
     this.editingExperience = undefined;
   }

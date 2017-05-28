@@ -15,6 +15,17 @@ export class ExperienceService {
       body: JSON.stringify(experience)
     });
   }
+  addTech(experienceId, tech) {
+    return this.http.fetch(`http://api.marktranter.com/experience/${experienceId}/techs`, {
+      method: 'PUT',
+      body: JSON.stringify(tech)
+    });
+  }
+  removeTech(experienceId, tech) {
+    return this.http.fetch(`http://api.marktranter.com/experience/${experienceId}/techs/${tech}`, {
+      method: 'DELETE'
+    });
+  }
   updateExperience(experience) {
     return this.http.fetch(`http://api.marktranter.com/experience/${experience.id}`, {
       method: 'PUT',
