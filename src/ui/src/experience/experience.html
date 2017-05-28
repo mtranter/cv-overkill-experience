@@ -15,7 +15,8 @@
             <span>
               <time datetime="${item.startDate}">${item.startDate | date: 'MMMM YYYY'}</time>
               -
-              <time datetime="${item.endDate}">${item.endDate | date: 'MMMM YYYY'}</time>
+              <time if.bind="!!item.endDate" datetime="${item.endDate}">${item.endDate | date: 'MMMM YYYY'}</time>
+              <span if.bind="!item.endDate">Present</span>
             </span>
             <div innerHtml.bind="item.blurb"></div>
           </article>
