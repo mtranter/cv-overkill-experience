@@ -98,7 +98,7 @@ namespace Experience.Service.Controllers
       return Ok();
     }
 
-    [HttpPut("{id:Guid}/techs/{tech}")]
+    [HttpDelete("{id:Guid}/techs/{tech}")]
     [Authorize(Policy = "IsMyGithub")]
     public async Task<ActionResult> DeleteTech(Guid id, string tech)
     {
