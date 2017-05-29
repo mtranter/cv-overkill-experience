@@ -33,7 +33,7 @@ namespace Experience.Service.Services.EventBus
                 {
                     Capped = true,
                     MaxDocuments = 1000,
-                    MaxSize = 500
+                    MaxSize = 50000
                 };
                 _mongoDb.CreateCollection(eventStream, options);
                 _existingCollections.Add(eventStream);
